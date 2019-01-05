@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<f:view>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:panelGrid>
+                <h2>Add author</h2>
+                <h:panelGrid columns="3">
+                    <h:outputLabel for="addAuthorFirstName">First name:</h:outputLabel>
+                    <h:inputText id="addAuthorFirstName" value="#{newAuthor.name}"/>
+                    <h:message for="addAuthorFirstName" errorClass="invalid"/>
+
+                    <h:outputLabel for="addAuthorLastName">Last Name:</h:outputLabel>
+                    <h:inputText id="addAuthorLastName" value="#{newAuthor.lastName}"/>
+                    <h:message for="addAuthorLastName" errorClass="invalid"/>
+
+                    <h:outputLabel for="addAuthorEmail">Email:</h:outputLabel>
+                    <h:inputText id="addAuthorEmail" value="#{newAuthor.email}"/>
+                    <h:message for="addAuthorEmail" errorClass="invalid"/>
+                </h:panelGrid>
+                <p>
+                    <h:panelGrid columns="2">
+                        <h:commandButton id="addAuthor"
+                                         action="#{bookController.addAuthor}"
+                                         value="Add Author" styleClass="addauthor"/>
+                    </h:panelGrid>
+                </p>
+
+                <h2>Add book</h2>
+                <h:panelGrid columns="3">
+                    <h:outputLabel for="addBookName">Book name:</h:outputLabel>
+                    <h:inputText id="addBookName" value="#{newBook.title}"/>
+                    <h:message for="addBookName" errorClass="invalid"/>
+
+                    <h:outputLabel for="addBookIsbn">ISBN:</h:outputLabel>
+                    <h:inputText id="addBookIsbn" value="#{newBook.ISBN}"/>
+                    <h:message for="addBookIsbn" errorClass="invalid"/>
+
+                    <h:outputLabel for="addBookGenre">Genre:</h:outputLabel>
+                    <h:inputText id="addBookGenre" value="#{newBook.genre}"/>
+                    <h:message for="addBookGenre" errorClass="invalid"/>
+
+                    <h:outputLabel for="addBookAuthorID">AuthorId:</h:outputLabel>
+                    <h:inputText id="addBookAuthorID" value="#{bookController.newBookAuthorId}"/>
+                    <h:message for="addBookAuthorID" errorClass="invalid"/>
+
+                </h:panelGrid>
+                <p>
+                    <h:panelGrid columns="2">
+                        <h:commandButton id="addbook"
+                                         action="#{bookController.addBok}"
+                                         value="Add Book" styleClass="addbook"/>
+                    </h:panelGrid>
+                </p>
+
+
+                <h2>Author/Publisher</h2>
+                <h:panelGrid columns="3">
+                    <h:outputLabel for="apauthorid">Author id:</h:outputLabel>
+                    <h:inputText id="apauthorid" value="#{APAuthor.authorId}"/>
+                    <h:message for="apauthorid" errorClass="invalid"/>
+
+                    <h:outputLabel for="appublisherid">Publisher id:</h:outputLabel>
+                    <h:inputText id="appublisherid" value="#{APPublisher.publisherId}"/>
+                    <h:message for="appublisherid" errorClass="invalid"/>
+                </h:panelGrid>
+
+                <p>
+                    <h:panelGrid columns="2">
+                        <h:commandButton id="registerAP"
+                                         action="#{bookController.APMakeContract}"
+                                         value="Register"
+                                         styleClass="register"/>
+                    </h:panelGrid>
+                </p>
+
+                <h2>Publisher/Book</h2>
+                <h:panelGrid columns="3">
+                    <h:outputLabel for="pbpublisherid">Publisher id:</h:outputLabel>
+                    <h:inputText id="pbpublisherid" value="#{PBPublisher.publisherId}"/>
+                    <h:message for="pbpublisherid" errorClass="invalid"/>
+
+                    <h:outputLabel for="pbbookid">Bookid id:</h:outputLabel>
+                    <h:inputText id="pbbookid" value="#{PBBook.bookId}"/>
+                    <h:message for="pbbookid" errorClass="invalid"/>
+                </h:panelGrid>
+
+                <p>
+                    <h:panelGrid columns="2">
+                        <h:commandButton id="registerPB"
+                                         action="#{bookController.PBAdd}"
+                                         value="Register"
+                                         styleClass="register"/>
+                    </h:panelGrid>
+                </p>
+
+                <h2>Book/Library</h2>
+                <h:panelGrid columns="3">
+                    <h:outputLabel for="BLbookid">Book id:</h:outputLabel>
+                    <h:inputText id="BLbookid" value="#{BLBook.bookId}"/>
+                    <h:message for="BLbookid" errorClass="invalid"/>
+
+                    <h:outputLabel for="BLlibid">Library id:</h:outputLabel>
+                    <h:inputText id="BLlibid" value="#{BLLibrary.libraryId}"/>
+                    <h:message for="BLlibid" errorClass="invalid"/>
+                </h:panelGrid>
+
+                <p>
+                    <h:panelGrid columns="2">
+                        <h:commandButton id="BLregister"
+                                         action="#{bookController.BLAdd}"
+                                         value="Register"
+                                         styleClass="register"/>
+                    </h:panelGrid>
+                </p>
+
+                <h:messages
+                        styleClass="messages"
+                        errorClass="invalid"
+                        infoClass="valid"
+                        warnClass="warning"
+                        globalOnly="true"/>
+
+
+            </h:panelGrid>
+
+            <h:panelGrid columns="2">
+                <h:outputLabel>Books:</h:outputLabel>
+                <h:dataTable
+                        value="#{books}"
+                        var="book"
+                        styleClass="order-table"
+                        headerClass="order-table-header"
+                        rowClasses="order-table-odd-row,order-table-even-row"
+                >
+                    <h:column>
+                        <f:facet name="header">Id</f:facet>
+                        #{book.bookId}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Title</f:facet>
+                        #{book.title}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Genre</f:facet>
+                        #{book.genre}
+                    </h:column>
+
+                </h:dataTable>
+
+                <h:outputLabel>Authors:</h:outputLabel>
+                <h:dataTable
+                        value="#{authors}"
+                        var="author"
+                        styleClass="order-table"
+                        headerClass="order-table-header"
+                        rowClasses="order-table-odd-row,order-table-even-row"
+                >
+                    <h:column>
+                        <f:facet name="header">Id</f:facet>
+                        #{author.authorId}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">First Name</f:facet>
+                        #{author.name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Last Name</f:facet>
+                        #{author.lastName}
+                    </h:column>
+
+                </h:dataTable>
+                <h:outputLabel>Publishers:</h:outputLabel>
+                <h:dataTable
+                        value="#{publishers}"
+                        var="publisher"
+                        styleClass="order-table"
+                        headerClass="order-table-header"
+                        rowClasses="order-table-odd-row,order-table-even-row"
+                >
+                    <h:column>
+                        <f:facet name="header">Id</f:facet>
+                        #{publisher.publisherId}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                        #{publisher.name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Address</f:facet>
+                        #{publisher.address}
+                    </h:column>
+
+                </h:dataTable>
+                <h:outputLabel>Libraries:</h:outputLabel>
+                <h:dataTable
+                        value="#{libraries}"
+                        var="library"
+                        styleClass="order-table"
+                        headerClass="order-table-header"
+                        rowClasses="order-table-odd-row,order-table-even-row"
+                >
+                    <h:column>
+                        <f:facet name="header">Id</f:facet>
+                        #{library.libraryId}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                        #{library.name}
+                    </h:column>
+
+                </h:dataTable>
+
+            </h:panelGrid>
+        </h:panelGrid>
+    </h:form>
+</f:view>
+</html>

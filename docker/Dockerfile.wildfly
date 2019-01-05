@@ -1,0 +1,10 @@
+FROM jboss/wildfly
+
+COPY resources/postgresql-42.2.2.jar /opt/jboss/wildfly/modules/org/postgresql/main/postgresql-42.2.2.jar
+COPY resources/module.xml /opt/jboss/wildfly/modules/org/postgresql/main/module.xml
+COPY resources/standalone.xml /opt/jboss/wildfly/standalone/configuration/standalone.xml
+
+COPY resources/sin.war /opt/jboss/wildfly/standalone/deployments/sin.war
+
+RUN /opt/jboss/wildfly/bin/add-user.sh admin admin --silent
+CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
