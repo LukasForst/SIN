@@ -1,4 +1,4 @@
-FROM jboss/wildfly
+FROM jboss/wildfly:14.0.1.Final
 
 COPY resources/postgresql-42.2.2.jar /opt/jboss/wildfly/modules/org/postgresql/main/postgresql-42.2.2.jar
 COPY resources/module.xml /opt/jboss/wildfly/modules/org/postgresql/main/module.xml
