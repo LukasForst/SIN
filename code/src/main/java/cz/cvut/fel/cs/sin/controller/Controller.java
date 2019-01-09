@@ -87,10 +87,6 @@ public class Controller {
     @Produces
     private List<Author> authors;
 
-    @Named
-    @Produces
-    private Author selectedAuthor;
-
 
     @Named
     @Produces
@@ -136,7 +132,6 @@ public class Controller {
         newBook = new Book();
         newBookAuthorId = "";
         newAuthor = new Author();
-        selectedAuthor = new Author();
 
         APPublisher = new Publisher();
         APAuthor = new Author();
@@ -186,7 +181,7 @@ public class Controller {
     public void addBok() {
         try {
             Set<Author> s = new HashSet<>();
-            Author a = authorService.find(Integer.valueOf(newBookAuthorId));
+            Author a = authorService.find(Integer.parseInt(newBookAuthorId));
 
             if(a == null){
                 FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Author Id not valid", "Author ID is invalid!");

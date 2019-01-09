@@ -25,7 +25,7 @@ public class AuthorValueConventer implements Converter {
 		}
 
 		try {
-            return authorService.find(Integer.valueOf(submittedValue));
+            return authorService.find(Integer.parseInt(submittedValue));
 		} catch (NumberFormatException e) {
 			throw new ConverterException(new FacesMessage(String.format("%s is not a valid User ID", submittedValue)), e);
 		}
