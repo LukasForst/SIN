@@ -1,16 +1,15 @@
 INSERT INTO author (name,lastname,email) VALUES
-  ('Lorem','Ipsum', 'dolor@amet.cz'),
-  ('Pavlo','Picaso','whtever@else.com');
+  ('Tomas','Werner', 'werner@cmp.felk.cvut.cz'),
+  ('Petr','Olsak','petr@olsak.net'),
+  ('Jan','Cech','cech.jan@fel.cvut.cz');
 
 INSERT INTO book ( isbn, datepublished, genre, title) VALUES
-  ('123456', '11.1.1999', 'Scifi','YesPlease'),
-  ('1234564', '9.9.1999', 'Scifi','LOrem Ipsum');
+  ('1-4028-9462-7', '22.9.2018', 'Mathematics','Optimization'),
+  ('1-4028-9462-8', '4.2.2015', 'Mathematics','Introduction to Linear Algebra');
 
 INSERT INTO library (name) VALUES
-  ('Library1'),
-  ('Library2');
+  ('NTK');
 
 INSERT INTO publisher (address, name) VALUES
-  ('Helena', 'Pavel'),
-  ('Helena', 'Pavlina'),
-  ('Jemen', 'Petr');
+  ('Karlovo nam. 13', 'FEL Karlovo namesti'),
+  ('Technicka 2', 'FEL Dejvice');

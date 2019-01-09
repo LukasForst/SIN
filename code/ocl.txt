@@ -1,0 +1,22 @@
+
+context Author inv: !Author.allInstances()->exists(a | a.authorId == self.authorId)
+context Author inv: self.name != null
+context Author inv: self.lastName != null
+
+context Book inv: !Book.allInstances()->exists(a | a.bookId == self.bookId)
+context Book inv: !Book.allInstances()->exists(a | a.ISBN == self.ISBN)
+context Book inv: self.genre != null
+context Book inv: self.title != null
+context Book inv: self.datePublished != null
+
+context Library inv: !Library.allInstances()->exists(a | a.libraryId == self.libraryId)
+context Library inv: self.name != null
+
+context LibraryBookCount inv: !LibraryBookCount.allInstances()->exists(a | a.entryId == self.entryId)
+context LibraryBookCount inv: self.libId != null && Library.allInstances()->exists(a | a.libId == self.libId)
+context LibraryBookCount inv: self.bookId != null && Book.allInstances()->exists(a | a.bookId == self.bookId)
+context LibraryBookCount inv: self.bookCount != null && self.bookCount <= 5 && self.bookCount >= 0
+
+context Publisher inv: !Publisher.allInstances()->exists(a | a.publisherId == self.publisherId)
+context Publisher inv: self.name != null
+context Publisher inv: self.address != null
