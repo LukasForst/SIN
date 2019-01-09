@@ -11,7 +11,6 @@ context Book inv: self.datePublished != null
 
 context Library inv: !Library.allInstances()->exists(a | a.libraryId == self.libraryId)
 context Library inv: self.name != null
-
 context LibraryBookCount inv: !LibraryBookCount.allInstances()->exists(a | a.entryId == self.entryId)
 context LibraryBookCount inv: self.libId != null && Library.allInstances()->exists(a | a.libId == self.libId)
 context LibraryBookCount inv: self.bookId != null && Book.allInstances()->exists(a | a.bookId == self.bookId)

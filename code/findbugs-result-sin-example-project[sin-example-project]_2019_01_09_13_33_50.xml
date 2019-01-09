@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://findbugs.sourceforge.net/xsl/default.xsl"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1547036127815" analysisTimestamp="1547036125514" release="">
+  <Project projectName="sin-example-project[sin-example-project]">
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/dao\DAO.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/dao\BookDAO.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/dao\AuthorDAO.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/dao\GenericDAO.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/dao\LibraryDAO.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/dao\BookDAOImpl.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/dao\PublisherDAO.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/dao\AuthorDAOImpl.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/dao\LibraryDAOImpl.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/dao\PublisherDAOImpl.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/util\Resource.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/entity\Book.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/entity\Author.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/entity\Library.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/entity\Publisher.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/service\BookService.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/service\AuthorService.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/service\LibraryService.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/service\BookServiceImpl.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/service\PublisherService.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/service\AuthorServiceImpl.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/service\LibraryServiceImpl.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/service\PublisherServiceImpl.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/converter\AuthorValueConventer.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\classes\cz/cvut/fel/cs/sin/controller\Controller.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\test-classes\cz/cvut/fel/cs/sin/service\BookServiceTest.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\test-classes\cz/cvut/fel/cs/sin/service\AuthorServiceTest.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\test-classes\cz/cvut/fel/cs/sin/service\LibraryServiceTest.class</Jar>
+    <Jar>C:\Users\lukas\school\SIN\sin_git\code\target\test-classes\cz/cvut/fel/cs/sin/service\PublisherServiceTest.class</Jar>
+    <AuxClasspathEntry>C:/Users/lukas/school/SIN/sin_git/code/target/classes</AuxClasspathEntry>
+    <AuxClasspathEntry>C:/Users/lukas/school/SIN/sin_git/code/target/test-classes</AuxClasspathEntry>
+    <SrcDir>C:/Users/lukas/school/SIN/sin_git/code/src/main/java</SrcDir>
+    <SrcDir>C:/Users/lukas/school/SIN/sin_git/code/src/main/resources</SrcDir>
+    <SrcDir>C:/Users/lukas/school/SIN/sin_git/code/src/test/java</SrcDir>
+    <SrcDir>C:/Users/lukas/school/SIN/sin_git/code/src/test/resources</SrcDir>
+  </Project>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" instanceHash="3b28d5d6c4d15f76c32988176ad3419a" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread field</ShortMessage>
+    <LongMessage>Unread field: cz.cvut.fel.cs.sin.controller.Controller.authors</LongMessage>
+    <Class classname="cz.cvut.fel.cs.sin.controller.Controller" primary="true">
+      <SourceLine classname="cz.cvut.fel.cs.sin.controller.Controller" sourcefile="Controller.java" sourcepath="cz/cvut/fel/cs/sin/controller/Controller.java" relSourcepath="main\java\cz\cvut\fel\cs\sin\controller\Controller.java">
+        <Message>In Controller.java</Message>
+      </SourceLine>
+      <Message>In class cz.cvut.fel.cs.sin.controller.Controller</Message>
+    </Class>
+    <Field classname="cz.cvut.fel.cs.sin.controller.Controller" name="authors" signature="Ljava/util/List;" isStatic="false" primary="true">
+      <SourceLine classname="cz.cvut.fel.cs.sin.controller.Controller" sourcefile="Controller.java" sourcepath="cz/cvut/fel/cs/sin/controller/Controller.java" relSourcepath="main\java\cz\cvut\fel\cs\sin\controller\Controller.java">
+        <Message>In Controller.java</Message>
+      </SourceLine>
+      <Message>Field cz.cvut.fel.cs.sin.controller.Controller.authors</Message>
+    </Field>
+    <SourceLine classname="cz.cvut.fel.cs.sin.controller.Controller" primary="true" start="146" end="146" startBytecode="179" endBytecode="179" sourcefile="Controller.java" sourcepath="cz/cvut/fel/cs/sin/controller/Controller.java" relSourcepath="main\java\cz\cvut\fel\cs\sin\controller\Controller.java">
+      <Message>At Controller.java:[line 146]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" instanceHash="4cf7a9a376d87b061ed59682d90c453e" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread field</ShortMessage>
+    <LongMessage>Unread field: cz.cvut.fel.cs.sin.controller.Controller.books</LongMessage>
+    <Class classname="cz.cvut.fel.cs.sin.controller.Controller" primary="true">
+      <SourceLine classname="cz.cvut.fel.cs.sin.controller.Controller" sourcefile="Controller.java" sourcepath="cz/cvut/fel/cs/sin/controller/Controller.java" relSourcepath="main\java\cz\cvut\fel\cs\sin\controller\Controller.java">
+        <Message>In Controller.java</Message>
+      </SourceLine>
+      <Message>In class cz.cvut.fel.cs.sin.controller.Controller</Message>
+    </Class>
+    <Field classname="cz.cvut.fel.cs.sin.controller.Controller" name="books" signature="Ljava/util/List;" isStatic="false" primary="true">
+      <SourceLine classname="cz.cvut.fel.cs.sin.controller.Controller" sourcefile="Controller.java" sourcepath="cz/cvut/fel/cs/sin/controller/Controller.java" relSourcepath="main\java\cz\cvut\fel\cs\sin\controller\Controller.java">
+        <Message>In Controller.java</Message>
+      </SourceLine>
+      <Message>Field cz.cvut.fel.cs.sin.controller.Controller.books</Message>
+    </Field>
+    <SourceLine classname="cz.cvut.fel.cs.sin.controller.Controller" primary="true" start="143" end="143" startBytecode="125" endBytecode="125" sourcefile="Controller.java" sourcepath="cz/cvut/fel/cs/sin/controller/Controller.java" relSourcepath="main\java\cz\cvut\fel\cs\sin\controller\Controller.java">
+      <Message>At Controller.java:[line 143]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" instanceHash="1059a7246679891f3309d2f83a3826a" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread field</ShortMessage>
+    <LongMessage>Unread field: cz.cvut.fel.cs.sin.controller.Controller.libraries</LongMessage>
+    <Class classname="cz.cvut.fel.cs.sin.controller.Controller" primary="true">
+      <SourceLine classname="cz.cvut.fel.cs.sin.controller.Controller" sourcefile="Controller.java" sourcepath="cz/cvut/fel/cs/sin/controller/Controller.java" relSourcepath="main\java\cz\cvut\fel\cs\sin\controller\Controller.java">
+        <Message>In Controller.java</Message>
+      </SourceLine>
+      <Message>In class cz.cvut.fel.cs.sin.controller.Controller</Message>
+    </Class>
+    <Field classname="cz.cvut.fel.cs.sin.controller.Controller" name="libraries" signature="Ljava/util/List;" isStatic="false" primary="true">
+      <SourceLine classname="cz.cvut.fel.cs.sin.controller.Controller" sourcefile="Controller.java" sourcepath="cz/cvut/fel/cs/sin/controller/Controller.java" relSourcepath="main\java\cz\cvut\fel\cs\sin\controller\Controller.java">
+        <Message>In Controller.java</Message>
+      </SourceLine>
+      <Message>Field cz.cvut.fel.cs.sin.controller.Controller.libraries</Message>
+    </Field>
+    <SourceLine classname="cz.cvut.fel.cs.sin.controller.Controller" primary="true" start="144" end="144" startBytecode="143" endBytecode="143" sourcefile="Controller.java" sourcepath="cz/cvut/fel/cs/sin/controller/Controller.java" relSourcepath="main\java\cz\cvut\fel\cs\sin\controller\Controller.java">
+      <Message>At Controller.java:[line 144]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" instanceHash="4adaf6007e764d72005514cb8d69d51e" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread field</ShortMessage>
+    <LongMessage>Unread field: cz.cvut.fel.cs.sin.controller.Controller.publishers</LongMessage>
+    <Class classname="cz.cvut.fel.cs.sin.controller.Controller" primary="true">
+      <SourceLine classname="cz.cvut.fel.cs.sin.controller.Controller" sourcefile="Controller.java" sourcepath="cz/cvut/fel/cs/sin/controller/Controller.java" relSourcepath="main\java\cz\cvut\fel\cs\sin\controller\Controller.java">
+        <Message>In Controller.java</Message>
+      </SourceLine>
+      <Message>In class cz.cvut.fel.cs.sin.controller.Controller</Message>
+    </Class>
+    <Field classname="cz.cvut.fel.cs.sin.controller.Controller" name="publishers" signature="Ljava/util/List;" isStatic="false" primary="true">
+      <SourceLine classname="cz.cvut.fel.cs.sin.controller.Controller" sourcefile="Controller.java" sourcepath="cz/cvut/fel/cs/sin/controller/Controller.java" relSourcepath="main\java\cz\cvut\fel\cs\sin\controller\Controller.java">
+        <Message>In Controller.java</Message>
+      </SourceLine>
+      <Message>Field cz.cvut.fel.cs.sin.controller.Controller.publishers</Message>
+    </Field>
+    <SourceLine classname="cz.cvut.fel.cs.sin.controller.Controller" primary="true" start="145" end="145" startBytecode="161" endBytecode="161" sourcefile="Controller.java" sourcepath="cz/cvut/fel/cs/sin/controller/Controller.java" relSourcepath="main\java\cz\cvut\fel\cs\sin\controller\Controller.java">
+      <Message>At Controller.java:[line 145]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugCategory category="PERFORMANCE">
+    <Description>Performance</Description>
+  </BugCategory>
+  <BugPattern type="URF_UNREAD_FIELD" abbrev="UrF" category="PERFORMANCE">
+    <ShortDescription>Unread field</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This field is never read.&nbsp; Consider removing it from the class.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="UrF">
+    <Description>Unread field</Description>
+  </BugCode>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 9 Jan 2019 13:15:24 +0100" total_classes="29" referenced_classes="58" total_bugs="4" total_size="567" num_packages="6" java_version="1.8.0_152-release" vm_version="25.152-b26" cpu_seconds="352.59" clock_seconds="1104.75" peak_mbytes="1307.39" alloc_mbytes="1092.75" gc_seconds="1.38" priority_2="4">
+    <FileStats path="cz/cvut/fel/cs/sin/controller/Controller.java" bugCount="4" size="102" bugHash="15d33cdd486cce726f6b1c49bce7ea38"/>
+    <FileStats path="cz/cvut/fel/cs/sin/converter/AuthorValueConventer.java" bugCount="0" size="18"/>
+    <FileStats path="cz/cvut/fel/cs/sin/dao/AuthorDAO.java" bugCount="0" size="1"/>
+    <FileStats path="cz/cvut/fel/cs/sin/dao/AuthorDAOImpl.java" bugCount="0" size="5"/>
+    <FileStats path="cz/cvut/fel/cs/sin/dao/BookDAO.java" bugCount="0" size="1"/>
+    <FileStats path="cz/cvut/fel/cs/sin/dao/BookDAOImpl.java" bugCount="0" size="5"/>
+    <FileStats path="cz/cvut/fel/cs/sin/dao/DAO.java" bugCount="0" size="6"/>
+    <FileStats path="cz/cvut/fel/cs/sin/dao/GenericDAO.java" bugCount="0" size="29"/>
+    <FileStats path="cz/cvut/fel/cs/sin/dao/LibraryDAO.java" bugCount="0" size="1"/>
+    <FileStats path="cz/cvut/fel/cs/sin/dao/LibraryDAOImpl.java" bugCount="0" size="5"/>
+    <FileStats path="cz/cvut/fel/cs/sin/dao/PublisherDAO.java" bugCount="0" size="1"/>
+    <FileStats path="cz/cvut/fel/cs/sin/dao/PublisherDAOImpl.java" bugCount="0" size="5"/>
+    <FileStats path="cz/cvut/fel/cs/sin/entity/Author.java" bugCount="0" size="44"/>
+    <FileStats path="cz/cvut/fel/cs/sin/entity/Book.java" bugCount="0" size="44"/>
+    <FileStats path="cz/cvut/fel/cs/sin/entity/Library.java" bugCount="0" size="23"/>
+    <FileStats path="cz/cvut/fel/cs/sin/entity/Publisher.java" bugCount="0" size="37"/>
+    <FileStats path="cz/cvut/fel/cs/sin/service/AuthorService.java" bugCount="0" size="3"/>
+    <FileStats path="cz/cvut/fel/cs/sin/service/AuthorServiceImpl.java" bugCount="0" size="11"/>
+    <FileStats path="cz/cvut/fel/cs/sin/service/AuthorServiceTest.java" bugCount="0" size="29"/>
+    <FileStats path="cz/cvut/fel/cs/sin/service/BookService.java" bugCount="0" size="2"/>
+    <FileStats path="cz/cvut/fel/cs/sin/service/BookServiceImpl.java" bugCount="0" size="9"/>
+    <FileStats path="cz/cvut/fel/cs/sin/service/BookServiceTest.java" bugCount="0" size="30"/>
+    <FileStats path="cz/cvut/fel/cs/sin/service/LibraryService.java" bugCount="0" size="3"/>
+    <FileStats path="cz/cvut/fel/cs/sin/service/LibraryServiceImpl.java" bugCount="0" size="17"/>
+    <FileStats path="cz/cvut/fel/cs/sin/service/LibraryServiceTest.java" bugCount="0" size="41"/>
+    <FileStats path="cz/cvut/fel/cs/sin/service/PublisherService.java" bugCount="0" size="4"/>
+    <FileStats path="cz/cvut/fel/cs/sin/service/PublisherServiceImpl.java" bugCount="0" size="25"/>
+    <FileStats path="cz/cvut/fel/cs/sin/service/PublisherServiceTest.java" bugCount="0" size="56"/>
+    <FileStats path="cz/cvut/fel/cs/sin/util/Resource.java" bugCount="0" size="10"/>
+    <PackageStats package="cz.cvut.fel.cs.sin.controller" total_bugs="4" total_types="1" total_size="102" priority_2="4">
+      <ClassStats class="cz.cvut.fel.cs.sin.controller.Controller" sourceFile="Controller.java" interface="false" size="102" bugs="4" priority_2="4"/>
+    </PackageStats>
+    <PackageStats package="cz.cvut.fel.cs.sin.converter" total_bugs="0" total_types="1" total_size="18">
+      <ClassStats class="cz.cvut.fel.cs.sin.converter.AuthorValueConventer" sourceFile="AuthorValueConventer.java" interface="false" size="18" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="cz.cvut.fel.cs.sin.dao" total_bugs="0" total_types="10" total_size="59">
+      <ClassStats class="cz.cvut.fel.cs.sin.dao.AuthorDAO" sourceFile="AuthorDAO.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.dao.AuthorDAOImpl" sourceFile="AuthorDAOImpl.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.dao.BookDAO" sourceFile="BookDAO.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.dao.BookDAOImpl" sourceFile="BookDAOImpl.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.dao.DAO" sourceFile="DAO.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.dao.GenericDAO" sourceFile="GenericDAO.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.dao.LibraryDAO" sourceFile="LibraryDAO.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.dao.LibraryDAOImpl" sourceFile="LibraryDAOImpl.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.dao.PublisherDAO" sourceFile="PublisherDAO.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.dao.PublisherDAOImpl" sourceFile="PublisherDAOImpl.java" interface="false" size="5" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="cz.cvut.fel.cs.sin.entity" total_bugs="0" total_types="4" total_size="148">
+      <ClassStats class="cz.cvut.fel.cs.sin.entity.Author" sourceFile="Author.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.entity.Book" sourceFile="Book.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.entity.Library" sourceFile="Library.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.entity.Publisher" sourceFile="Publisher.java" interface="false" size="37" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="cz.cvut.fel.cs.sin.service" total_bugs="0" total_types="12" total_size="230">
+      <ClassStats class="cz.cvut.fel.cs.sin.service.AuthorService" sourceFile="AuthorService.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.service.AuthorServiceImpl" sourceFile="AuthorServiceImpl.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.service.AuthorServiceTest" sourceFile="AuthorServiceTest.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.service.BookService" sourceFile="BookService.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.service.BookServiceImpl" sourceFile="BookServiceImpl.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.service.BookServiceTest" sourceFile="BookServiceTest.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.service.LibraryService" sourceFile="LibraryService.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.service.LibraryServiceImpl" sourceFile="LibraryServiceImpl.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.service.LibraryServiceTest" sourceFile="LibraryServiceTest.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.service.PublisherService" sourceFile="PublisherService.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.service.PublisherServiceImpl" sourceFile="PublisherServiceImpl.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="cz.cvut.fel.cs.sin.service.PublisherServiceTest" sourceFile="PublisherServiceTest.java" interface="false" size="56" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="cz.cvut.fel.cs.sin.util" total_bugs="0" total_types="1" total_size="10">
+      <ClassStats class="cz.cvut.fel.cs.sin.util.Resource" sourceFile="Resource.java" interface="false" size="10" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="508" invocations="495" avgMicrosecondsPerInvocation="1026" maxMicrosecondsPerInvocation="47209" standardDeviationMircosecondsPerInvocation="3437"/>
+      <ClassProfile name="edu.umd.cs.findbugs.FindBugs2" totalMilliseconds="503" invocations="2" avgMicrosecondsPerInvocation="251904" maxMicrosecondsPerInvocation="442527" standardDeviationMircosecondsPerInvocation="190623"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="182" invocations="498" avgMicrosecondsPerInvocation="365" maxMicrosecondsPerInvocation="56300" standardDeviationMircosecondsPerInvocation="2516"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="94" invocations="58" avgMicrosecondsPerInvocation="1622" maxMicrosecondsPerInvocation="84783" standardDeviationMircosecondsPerInvocation="11018"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="66" invocations="416" avgMicrosecondsPerInvocation="159" maxMicrosecondsPerInvocation="27097" standardDeviationMircosecondsPerInvocation="1531"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="58" invocations="58" avgMicrosecondsPerInvocation="1008" maxMicrosecondsPerInvocation="21393" standardDeviationMircosecondsPerInvocation="2849"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="58" invocations="115" avgMicrosecondsPerInvocation="506" maxMicrosecondsPerInvocation="15646" standardDeviationMircosecondsPerInvocation="1944"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="52" invocations="58" avgMicrosecondsPerInvocation="896" maxMicrosecondsPerInvocation="8480" standardDeviationMircosecondsPerInvocation="1556"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="49" invocations="114" avgMicrosecondsPerInvocation="432" maxMicrosecondsPerInvocation="18404" standardDeviationMircosecondsPerInvocation="1735"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="41" invocations="105" avgMicrosecondsPerInvocation="390" maxMicrosecondsPerInvocation="2863" standardDeviationMircosecondsPerInvocation="524"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="38" invocations="114" avgMicrosecondsPerInvocation="341" maxMicrosecondsPerInvocation="2170" standardDeviationMircosecondsPerInvocation="397"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="37" invocations="71" avgMicrosecondsPerInvocation="534" maxMicrosecondsPerInvocation="16645" standardDeviationMircosecondsPerInvocation="1949"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="32" invocations="114" avgMicrosecondsPerInvocation="281" maxMicrosecondsPerInvocation="1496" standardDeviationMircosecondsPerInvocation="260"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="32" invocations="202" avgMicrosecondsPerInvocation="158" maxMicrosecondsPerInvocation="2312" standardDeviationMircosecondsPerInvocation="239"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>
