@@ -4,8 +4,8 @@ import cz.cvut.fel.cs.sin.entity.Library;
 
 public interface LibraryService {
 
-    public void register(Library library);
+    void add(Library library);
 
-    public void libraryAddBook(Object libraryId, Object bookId);
+    void addBook(int libraryId, int bookId);
 
 }

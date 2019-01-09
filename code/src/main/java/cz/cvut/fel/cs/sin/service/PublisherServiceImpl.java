@@ -27,14 +27,14 @@ public class PublisherServiceImpl implements PublisherService {
     @Inject
     Logger logger;
 
-    public void register(Publisher publisher) {
+    public void add(Publisher publisher) {
         publisherDAO.save(publisher);
         logger.info("Created publisher with name: " + publisher.getName() + ", id: " + publisher.getPublisherId());
     }
 
 
     @Override
-    public void publisherPublishBook(Object publisherId, Object bookId) {
+    public void publishBook(int publisherId, int bookId) {
         Publisher publisher = Preconditions.checkNotNull(publisherDAO.find(publisherId));
         Book book = Preconditions.checkNotNull(bookDAO.find(bookId));
 
@@ -45,7 +45,7 @@ public class PublisherServiceImpl implements PublisherService {
     }
 
     @Override
-    public void publisherSignContract(Object publisherId, Object authorId) {
+    public void singContract(int publisherId, int authorId) {
         Publisher publisher = Preconditions.checkNotNull(publisherDAO.find(publisherId));
         Author author = Preconditions.checkNotNull(authorDAO.find(authorId));
 

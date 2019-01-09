@@ -2,9 +2,7 @@ package cz.cvut.fel.cs.sin.service;
 
 
 import cz.cvut.fel.cs.sin.dao.BookDAOImpl;
-import cz.cvut.fel.cs.sin.dao.PublisherDAOImpl;
 import cz.cvut.fel.cs.sin.entity.Book;
-import cz.cvut.fel.cs.sin.entity.Publisher;
 import cz.cvut.fel.cs.sin.util.Resource;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -19,14 +17,14 @@ import javax.inject.Inject;
 import java.util.List;
 
 @RunWith(Arquillian.class)
-public class PublisherAddTest {
+public class BookServiceTest {
 
     @Deployment
     public static WebArchive createDeployment() {
         return ShrinkWrap.create(WebArchive.class, "test.war")
-                .addPackage(Publisher.class.getPackage())
-                .addPackage(PublisherDAOImpl.class.getPackage())
-                .addPackage(PublisherServiceImpl.class.getPackage())
+                .addPackage(Book.class.getPackage())
+                .addPackage(BookDAOImpl.class.getPackage())
+                .addPackage(BookServiceImpl.class.getPackage())
                 .addClass(Resource.class)
                 .addAsResource("META-INF/test-persistence.xml", "META-INF/persistence.xml")
                 .addAsResource("import.sql")
@@ -35,27 +33,25 @@ public class PublisherAddTest {
     }
 
     @Inject
-    PublisherService creation;
+    BookService creation;
 
     @Inject
-    PublisherDAOImpl dao;
+    BookDAOImpl dao;
 
     @Test
     public void testAddBook() {
-        Publisher publisher = new Publisher();
-        publisher.setAddress("Test Publisher Address");
-        publisher.setName("Test Publisher");
-        {
-            List<Publisher> publishers = dao.list();
-            publishers.forEach(b -> System.out.println(b.getName()));
-            Assert.assertEquals(publishers.size(), 2);
-        }
-        creation.register(publisher);
-        {
-            List<Publisher> publishers = dao.list();
-            publishers.forEach(b -> System.out.println(b.getName()));
-            Assert.assertEquals(publishers.size(), 3);
-        }
+        Book book = new Book();
+        book.setTitle("New Book Testing");
+        book.setDatePublished("Test");
+        book.setGenre("Test");
+        book.setISBN("Test");
+        List<Book> books = dao.list();
+        books.forEach(b -> System.out.println(b.getTitle()));
+        Assert.assertEquals(books.size(), 2);
+        creation.add(book);
+        books = dao.list();
+        books.forEach(b -> System.out.println(b.getTitle()));
+        Assert.assertEquals(books.size(), 3);
 
 
     }

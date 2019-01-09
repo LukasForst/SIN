@@ -153,7 +153,7 @@ public class BookController {
 
     public void APMakeContract() {
         logger.info("APMake!");
-        publisherService.publisherSignContract(APPublisher.getPublisherId(), APAuthor.getAuthorId());
+        publisherService.singContract(APPublisher.getPublisherId(), APAuthor.getAuthorId());
         FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Contract signed!", "Contract signed");
         facesContext.addMessage(null, m);
         initNewBook();
@@ -161,13 +161,13 @@ public class BookController {
 
     public void PBAdd() {
         logger.info("PBADD");
-        publisherService.publisherPublishBook(PBPublisher.getPublisherId(), PBBook.getBookId());
+        publisherService.publishBook(PBPublisher.getPublisherId(), PBBook.getBookId());
         initNewBook();
     }
 
     public void BLAdd() {
         logger.info("BLADD");
-        libraryService.libraryAddBook(BLLibrary.getLibraryId(), BLBook.getBookId());
+        libraryService.addBook(BLLibrary.getLibraryId(), BLBook.getBookId());
         initNewBook();
     }
 
@@ -176,13 +176,13 @@ public class BookController {
         s.add(authorService.find(Integer.valueOf(newBookAuthorId)));
         logger.info("Adding book " + newBook.getTitle());
         newBook.setAuthors(s);
-        bookService.createBook(newBook);
+        bookService.add(newBook);
         initNewBook();
     }
 
     public void addAuthor() {
         logger.info("Adding author " + newAuthor.getName());
-        authorService.createAuthor(newAuthor);
+        authorService.add(newAuthor);
         FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Author added!", "Author added!");
         facesContext.addMessage(null, m);
         initNewBook();

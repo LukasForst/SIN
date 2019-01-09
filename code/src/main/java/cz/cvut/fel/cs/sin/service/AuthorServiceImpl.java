@@ -16,7 +16,7 @@ public class AuthorServiceImpl implements AuthorService {
     @Inject
     Logger logger;
 
-    public void createAuthor(Author author) {
+    public void add(Author author) {
         authorDAO.save(author);
         logger.info("Created author with name: " + author.getName() + " " + author.getLastName() + ", id: " + author.getAuthorId());
     }

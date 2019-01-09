@@ -4,6 +4,6 @@ import cz.cvut.fel.cs.sin.entity.Book;
 
 public interface BookService {
 
-    public void createBook(Book book);
+    void add(Book book);
 
 }

@@ -2,14 +2,10 @@ package cz.cvut.fel.cs.sin.service;
 
 
 import com.google.common.base.Preconditions;
-import cz.cvut.fel.cs.sin.dao.AuthorDAOImpl;
 import cz.cvut.fel.cs.sin.dao.BookDAOImpl;
 import cz.cvut.fel.cs.sin.dao.LibraryDAOImpl;
-import cz.cvut.fel.cs.sin.dao.PublisherDAOImpl;
-import cz.cvut.fel.cs.sin.entity.Author;
 import cz.cvut.fel.cs.sin.entity.Book;
 import cz.cvut.fel.cs.sin.entity.Library;
-import cz.cvut.fel.cs.sin.entity.Publisher;
 import cz.cvut.fel.cs.sin.util.Resource;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -24,16 +20,17 @@ import javax.inject.Inject;
 import java.util.List;
 
 @RunWith(Arquillian.class)
-public class LibraryAddBookTest {
+public class LibraryServiceTest {
 
     @Deployment
     public static WebArchive createDeployment() {
         return ShrinkWrap.create(WebArchive.class, "test.war")
-                .addPackage(Publisher.class.getPackage())
-                .addPackage(PublisherDAOImpl.class.getPackage())
-                .addPackage(PublisherServiceImpl.class.getPackage())
-                .addPackage(Author.class.getPackage())
-                .addPackage(AuthorDAOImpl.class.getPackage())
+                .addPackage(Library.class.getPackage())
+                .addPackage(LibraryDAOImpl.class.getPackage())
+                .addPackage(LibraryService.class.getPackage())
+                .addPackage(LibraryServiceImpl.class.getPackage())
+                .addPackage(Book.class.getPackage())
+                .addPackage(BookDAOImpl.class.getPackage())
                 .addClass(Preconditions.class)
                 .addClass(Resource.class)
                 .addAsResource("META-INF/test-persistence.xml", "META-INF/persistence.xml")
@@ -60,10 +57,25 @@ public class LibraryAddBookTest {
         Library library = publishers.get(0);
         Book book = books.get(0);
 
-        service.libraryAddBook(library.getLibraryId(), book.getBookId());
+        service.addBook(library.getLibraryId(), book.getBookId());
         library = daoLibrary.find(library.getLibraryId());
 
         Assert.assertFalse(library.getOwnBooks().isEmpty());
+
+    }
+
+    @Test
+    public void testAddLibrary() {
+        Library library = new Library();
+        library.setName("Nova knihovna");
+        List<Library> libraries = daoLibrary.list();
+        libraries.forEach(b -> System.out.println(b.getName()));
+        Assert.assertEquals(libraries.size(), 1);
+        service.add(library);
+        libraries = daoLibrary.list();
+        libraries.forEach(b -> System.out.println(b.getName()));
+        Assert.assertEquals(libraries.size(), 2);
+
 
     }
 

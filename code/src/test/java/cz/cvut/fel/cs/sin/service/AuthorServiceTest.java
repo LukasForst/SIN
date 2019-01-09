@@ -17,7 +17,7 @@ import java.util.List;
 
 
 @RunWith(Arquillian.class)
-public class AuthorAddTest {
+public class AuthorServiceTest {
 
     @Deployment
     public static WebArchive createDeployment() {
@@ -33,7 +33,7 @@ public class AuthorAddTest {
     }
 
     @Inject
-    AuthorService creation;
+    AuthorService service;
 
     @Inject
     AuthorDAOImpl dao;
@@ -45,17 +45,14 @@ public class AuthorAddTest {
         author.setName("Mirko");
         author.setEmail("navara@cmp.cvut.cz");
 
-        {
-            List<Author> authors = dao.list();
-            authors.forEach(a -> System.out.println(a.getName() + " " + a.getLastName()));
-            Assert.assertEquals(authors.size(), 3);
-        }
-        creation.createAuthor(author);
-        {
-            List<Author> authors = dao.list();
-            authors.forEach(a -> System.out.println(a.getName() + " " + a.getLastName()));
-            Assert.assertEquals(authors.size(), 4);
-        }
+        List<Author> authors = dao.list();
+        authors.forEach(a -> System.out.println(a.getName() + " " + a.getLastName()));
+        Assert.assertEquals(authors.size(), 3);
+
+        service.add(author);
+        authors = dao.list();
+        authors.forEach(a -> System.out.println(a.getName() + " " + a.getLastName()));
+        Assert.assertEquals(authors.size(), 4);
 
 
     }

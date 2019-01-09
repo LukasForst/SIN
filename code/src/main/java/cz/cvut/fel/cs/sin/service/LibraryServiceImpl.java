@@ -22,13 +22,13 @@ public class LibraryServiceImpl implements LibraryService {
     @Inject
     Logger logger;
 
-    public void register(Library library) {
+    public void add(Library library) {
         libraryDAO.save(library);
         logger.info("Created library with name: " + library.getName() + ", id: " + library.getLibraryId());
     }
 
     @Override
-    public void libraryAddBook(Object libraryId, Object bookId) {
+    public void addBook(int libraryId, int bookId) {
         Library library = Preconditions.checkNotNull(libraryDAO.find(libraryId));
         Book book = Preconditions.checkNotNull(bookDAO.find(bookId));
 

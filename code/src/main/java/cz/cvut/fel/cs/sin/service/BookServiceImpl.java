@@ -16,7 +16,7 @@ public class BookServiceImpl implements BookService {
     @Inject
     Logger logger;
 
-    public void createBook(Book book) {
+    public void add(Book book) {
         bookDAO.save(book);
         logger.info("Created book with title: " + book.getTitle() + ", id: " + book.getBookId());
     }
