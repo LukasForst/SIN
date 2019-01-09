@@ -26,7 +26,7 @@
                 <p>
                     <h:panelGrid columns="2">
                         <h:commandButton id="addAuthor"
-                                         action="#{bookController.addAuthor}"
+                                         action="#{controller.addAuthor}"
                                          value="Add Author" styleClass="addauthor"/>
                     </h:panelGrid>
                 </p>
@@ -46,14 +46,14 @@
                     <h:message for="addBookGenre" errorClass="invalid"/>
 
                     <h:outputLabel for="addBookAuthorID">AuthorId:</h:outputLabel>
-                    <h:inputText id="addBookAuthorID" value="#{bookController.newBookAuthorId}"/>
+                    <h:inputText id="addBookAuthorID" value="#{controller.newBookAuthorId}"/>
                     <h:message for="addBookAuthorID" errorClass="invalid"/>
 
                 </h:panelGrid>
                 <p>
                     <h:panelGrid columns="2">
                         <h:commandButton id="addbook"
-                                         action="#{bookController.addBok}"
+                                         action="#{controller.addBok}"
                                          value="Add Book" styleClass="addbook"/>
                     </h:panelGrid>
                 </p>
@@ -73,7 +73,7 @@
                 <p>
                     <h:panelGrid columns="2">
                         <h:commandButton id="registerAP"
-                                         action="#{bookController.APMakeContract}"
+                                         action="#{controller.APMakeContract}"
                                          value="Register"
                                          styleClass="register"/>
                     </h:panelGrid>
@@ -93,7 +93,7 @@
                 <p>
                     <h:panelGrid columns="2">
                         <h:commandButton id="registerPB"
-                                         action="#{bookController.PBAdd}"
+                                         action="#{controller.addPublisherToBook}"
                                          value="Register"
                                          styleClass="register"/>
                     </h:panelGrid>
@@ -113,7 +113,7 @@
                 <p>
                     <h:panelGrid columns="2">
                         <h:commandButton id="BLregister"
-                                         action="#{bookController.BLAdd}"
+                                         action="#{controller.addBookToLibrary}"
                                          value="Register"
                                          styleClass="register"/>
                     </h:panelGrid>
@@ -172,6 +172,10 @@
                     <h:column>
                         <f:facet name="header">Last Name</f:facet>
                         #{author.lastName}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Email</f:facet>
+                        #{author.email}
                     </h:column>
 
                 </h:dataTable>

@@ -27,7 +27,7 @@ import java.util.Set;
 import java.util.logging.Logger;
 
 @Model
-public class BookController {
+public class Controller {
 
     @Inject
     Logger logger;
@@ -152,39 +152,69 @@ public class BookController {
     }
 
     public void APMakeContract() {
-        logger.info("APMake!");
-        publisherService.singContract(APPublisher.getPublisherId(), APAuthor.getAuthorId());
-        FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Contract signed!", "Contract signed");
-        facesContext.addMessage(null, m);
-        initNewBook();
+        try {
+            publisherService.singContract(APPublisher.getPublisherId(), APAuthor.getAuthorId());
+            FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Contract signed!", "Contract signed");
+            facesContext.addMessage(null, m);
+            initNewBook();
+        } catch (Exception e) {
+            FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Exception during persistence!", e.getMessage());
+            facesContext.addMessage(null, m);
+        }
     }
 
-    public void PBAdd() {
-        logger.info("PBADD");
-        publisherService.publishBook(PBPublisher.getPublisherId(), PBBook.getBookId());
-        initNewBook();
+    public void addPublisherToBook() {
+        try {
+            publisherService.publishBook(PBPublisher.getPublisherId(), PBBook.getBookId());
+            initNewBook();
+        } catch (Exception e) {
+            FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Exception during persistence!", e.getMessage());
+            facesContext.addMessage(null, m);
+        }
     }
 
-    public void BLAdd() {
-        logger.info("BLADD");
-        libraryService.addBook(BLLibrary.getLibraryId(), BLBook.getBookId());
-        initNewBook();
+    public void addBookToLibrary() {
+        try {
+            libraryService.addBook(BLLibrary.getLibraryId(), BLBook.getBookId());
+            initNewBook();
+        } catch (Exception e) {
+            FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Exception during persistence!", e.getMessage());
+            facesContext.addMessage(null, m);
+        }
     }
 
     public void addBok() {
-        Set<Author> s = new HashSet<>();
-        s.add(authorService.find(Integer.valueOf(newBookAuthorId)));
-        logger.info("Adding book " + newBook.getTitle());
-        newBook.setAuthors(s);
-        bookService.add(newBook);
-        initNewBook();
+        try {
+            Set<Author> s = new HashSet<>();
+            Author a = authorService.find(Integer.valueOf(newBookAuthorId));
+
+            if(a == null){
+                FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Author Id not valid", "Author ID is invalid!");
+                facesContext.addMessage(null, m);
+                return;
+            }
+
+            s.add(a);
+            logger.info("Adding book " + newBook.getTitle());
+            newBook.setAuthors(s);
+            bookService.add(newBook);
+            initNewBook();
+        } catch (Exception e) {
+            FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Exception during persistence!", e.getMessage());
+            facesContext.addMessage(null, m);
+        }
     }
 
     public void addAuthor() {
-        logger.info("Adding author " + newAuthor.getName());
-        authorService.add(newAuthor);
-        FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Author added!", "Author added!");
-        facesContext.addMessage(null, m);
-        initNewBook();
+        try {
+            logger.info("Adding author " + newAuthor.getName());
+            authorService.add(newAuthor);
+            FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Author added!", "Author added!");
+            facesContext.addMessage(null, m);
+            initNewBook();
+        } catch (Exception e) {
+            FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Exception during persistence!", e.getMessage());
+            facesContext.addMessage(null, m);
+        }
     }
 }
